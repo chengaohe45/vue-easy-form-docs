@@ -1,0 +1,37 @@
+{
+  "name": "vue-easy-form-docs",
+  "version": "1.4.0",
+  "private": false,
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "peter.chen",
+    "email": "",
+    "url": ""
+  },
+  "main": "dist/es-form.umd.min.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "easy-form",
+    "es-form",
+    "vue-easy-form"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.11"
+  }
+}
