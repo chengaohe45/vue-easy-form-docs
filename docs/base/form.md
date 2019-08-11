@@ -26,7 +26,7 @@
 
 | 事件名称 | 说明 | 回调参数 | 备注
 | -- | -- | -- | -- 
-| inited | 表单初始化完成时触发 | (formValue) | -- 
+| inited | 表单初始化完成时触发 | (formValue) | schema改变时（[非深度监听](https://cn.vuejs.org/v2/api/#watch)），表单会重新初始化，inited会再次调用(`inited未完成之前，用户行为事件（change、submit）暂不会触发，其它事件（input）不受影响`)
 | input | 表单的值有改变时触发 | (formValue, keyPath) | -- 
 | change | 表单组件改变时触发 | (formValue, keyPath, eventData) | setValue不会触发
 | submit | 提交表单 | (formValue) | form.submit(); 组件事件(@enterSubmit; @submit)会触发
