@@ -104,7 +104,7 @@ data() {
 
 属性array.rules写法跟项组件验证一样，具体见[项组件验证](./rules.html)
 
-## 数组[es写法](./com-standard.md#es写法)
+## 数组es写法
 
 如schema为：
 ```js
@@ -147,4 +147,4 @@ data() {
 `[i]`必须写在大括号内
 :::
 
-[schema的具体写法](./schema.md)
+（普通的）[es写法](./com-standard.md#es写法)

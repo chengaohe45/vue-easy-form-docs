@@ -1,5 +1,5 @@
 # 调试面板
-若设置了调试面板，当打开页面时，左上角有一个`Console`按钮，具体见[调试面板实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
+若设置了调试面板，当打开页面时，左上角有一个`C`按钮，具体见[调试面板实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
 
 ## 全局引入设置
 

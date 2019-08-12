@@ -7,7 +7,7 @@
     <meta name="description" content="后台自动化平台">
     
     
-    <link rel="preload" href="/vue-easy-form-docs/dist/assets/css/0.styles.bfdf65d2.css" as="style"><link rel="preload" href="/vue-easy-form-docs/dist/assets/js/app.cf7264d1.js" as="script"><link rel="preload" href="/vue-easy-form-docs/dist/assets/js/18.c9f3524b.js" as="script"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/10.df0b5880.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/11.7b334dac.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/12.326ca417.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/13.4aa0c87c.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/14.cb2b8883.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/15.281f33ec.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/16.d19c759f.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/17.e3f10124.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/19.7199f8bd.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/2.2e997160.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/20.af796efb.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/21.f360d55d.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/22.92ff5534.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/23.c241b798.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/24.c9eac9f4.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/3.f31026ed.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/4.0bee2504.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/5.e8cc91c3.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/6.fef8884a.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/7.28690155.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/8.32cae72f.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/9.750b7eb0.js">
+    <link rel="preload" href="/vue-easy-form-docs/dist/assets/css/0.styles.bfdf65d2.css" as="style"><link rel="preload" href="/vue-easy-form-docs/dist/assets/js/app.c3de41c9.js" as="script"><link rel="preload" href="/vue-easy-form-docs/dist/assets/js/18.b8c76a95.js" as="script"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/10.df0b5880.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/11.7b334dac.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/12.326ca417.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/13.4aa0c87c.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/14.cb2b8883.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/15.281f33ec.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/16.d19c759f.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/17.6f85bee0.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/19.7199f8bd.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/2.2e997160.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/20.af796efb.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/21.f360d55d.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/22.d8b35c10.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/23.4b26048e.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/24.c9eac9f4.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/3.f31026ed.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/4.0bee2504.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/5.7dfd1273.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/6.45a984a4.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/7.28690155.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/8.d071a94c.js"><link rel="prefetch" href="/vue-easy-form-docs/dist/assets/js/9.750b7eb0.js">
     <link rel="stylesheet" href="/vue-easy-form-docs/dist/assets/css/0.styles.bfdf65d2.css">
   </head>
   <body>
@@ -37,24 +37,14 @@
 </code></pre></div><p><a href="/vue-easy-form-docs/dist/base/settings.html">schema的配置详解</a></p> <h2 id="schema一览表"><a href="#schema一览表" aria-hidden="true" class="header-anchor">#</a> schema一览表</h2> <p>schema就是一个json对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
   autoMatch<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 一二级的数据自动匹配, 只在根节点中有效</span>
   title<span class="token punctuation">:</span> <span class="token string">'表单名称'</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 标题, properties(同组)要存在</span>
-  direction<span class="token punctuation">:</span> <span class="token string">&quot;v&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 类型：字符串; 值：v或h 横排还是竖排</span>
-  colon<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承</span>
-  rowHeight<span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px） 每一行的高度</span>
-  rowSpace<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px）与上一次行之间的间隔</span>
-  labelWidth<span class="token punctuation">:</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px） label的宽度</span>
-  offsetLeft<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>    <span class="token comment">// 非必填 每一项左边留白的空间</span>
-  offsetRight<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>   <span class="token comment">// 非必填 每一项右边留白的空间</span>
-  hidden<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 持es语法; 是否隐藏此级，默认为显示</span>
-  hdValue<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>  <span class="token comment">// 非必填。有hidden的地方可设置此值</span>
   layout<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>     <span class="token comment">// 非必填。space: 是一个占位符; tabs: 下一级tabs布局, 详情见[表单开始/配置]</span>
-  isTmp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// true时表单不输出此项值</span>
   ui<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// 非必填. 对properties界面的补充</span>
     showBody<span class="token punctuation">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>  <span class="token comment">// 此值有undefined, true, false</span>
     type<span class="token punctuation">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>      <span class="token comment">// 此值有undefined, bg, block, bg-block</span>
     hasBorder<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     padding<span class="token punctuation">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>   <span class="token comment">// 内容区的内边距</span>
-    hidden<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 持es语法; 是否隐藏此级，默认为显示</span>
 
+    <span class="token comment">// 以下的这几个值会被下一级继承（如name）</span>
     direction<span class="token punctuation">:</span> <span class="token string">&quot;v&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 类型：字符串; 值：v或h 横排还是竖排</span>
     colon<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承</span>
     rowHeight<span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px） 每一行的高度</span>
@@ -64,12 +54,24 @@
     offsetRight<span class="token punctuation">:</span> <span class="token number">0</span>   <span class="token comment">// 非必填 每一项右边留白的空间</span>
     
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  properties<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// 根节点：表单字段</span>
-    name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      value<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 必填：数据的值</span>
+  hidden<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填，隐藏此项; 在根节点（最外级）中无效</span>
+  hdValue<span class="token punctuation">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">//  非必填，隐藏项时的值; 在根节点（最外级）中无效</span>
+  isTmp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 临时值; 在根节点（最外级）中无效</span>
+  label<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 项标签名; 在根节点（最外级）中无效</span>
+  properties<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// properties代表块，下面包含项</span>
+    name<span class="token punctuation">:</span> <span class="token punctuation">{</span>     <span class="token comment">// 这就一项</span>
+      <span class="token comment">// 在项中设置，只影响当前的项，也就是只影响name</span>
+      direction<span class="token punctuation">:</span> <span class="token string">&quot;v&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填值：v或h 横排还是竖排；不写就继承父类</span>
+      colon<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承</span>
+      rowHeight<span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px） 每一行的高度</span>
+      rowSpace<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px）与上一次行之间的间隔</span>
+      labelWidth<span class="token punctuation">:</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 整数（px） label的宽度</span>
+      offsetLeft<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>    <span class="token comment">// 非必填 每一项左边留白的空间</span>
+      offsetRight<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>   <span class="token comment">// 非必填 每一项右边留白的空间</span>
+
       hidden<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 支持es语法; 是否隐藏此级，默认为显示</span>
-      hdValue<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">//  非必填 同上hdValue</span>
-      direction<span class="token punctuation">:</span> <span class="token string">&quot;h&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 同上，不写就继承父类</span>
+      hdValue<span class="token punctuation">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">//  非必填 同上hdValue</span>
+      isTmp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 临时值</span>
       isTrim<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 是否去掉左右两边的空格，包括换行，默认为true</span>
       col<span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span>  <span class="token comment">// 非必填 每一个属性原则上是点一行的，一行分为24列，12就代表一半</span>
       <span class="token comment">// label: &quot;姓名&quot;, // 必填</span>
@@ -100,37 +102,26 @@
         ref<span class="token punctuation">:</span> <span class="token string">&quot;testRef&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 组件索引</span>
         actions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>    <span class="token comment">// 非必填 组件事件</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      value<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 非必填：此项的值；最好填写，用于默认值；默认为undefined</span>
       <span class="token comment">// 字符串（如&quot;g&quot;可以是任意字符串），设置此值说明相邻的&quot;同组&quot;节点会排成一行，不换行; </span>
-      <span class="token comment">// 是排列component,对properties无效</span>
       group<span class="token punctuation">:</span> <span class="token string">&quot;g&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填</span>
       unit<span class="token punctuation">:</span> <span class="token string">&quot;%&quot;</span><span class="token punctuation">,</span>  <span class="token comment">// 非必填 字符串，对组件进行补充; 是对component的补充,对properties无效</span>
       desc<span class="token punctuation">:</span> <span class="token string">&quot;姓名必须这个样子&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 非必填 对此属性的描述</span>
       help<span class="token punctuation">:</span> <span class="token string">&quot;我就是要提示&quot;</span> <span class="token comment">//非必填</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-    <span class="token comment">// 当有layout=='space',说明这个是占位空间; 区分大小写</span>
-    <span class="token comment">// 此值不会取出，label也不会显示（有效值只有col, hidden, group; 其余的失效）</span>
-    <span class="token comment">// &quot;tmptext3&quot;为任意属性名</span>
-    tmptext3<span class="token punctuation">:</span> <span class="token punctuation">{</span> 
-      layout<span class="token punctuation">:</span> <span class="token string">&quot;space&quot;</span><span class="token punctuation">,</span>
-      group<span class="token punctuation">:</span> <span class="token string">&quot;g&quot;</span><span class="token punctuation">,</span>
-      value<span class="token punctuation">:</span> <span class="token string">&quot;102&quot;</span><span class="token punctuation">,</span>
-      col<span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
-      label<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        text<span class="token punctuation">:</span> <span class="token string">&quot;体重体重体重体重3&quot;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      help<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    more1<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      title<span class="token punctuation">:</span> <span class="token operator">...</span>
-      properties<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    info<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// 这也是一项；只不过这项就是一个块（下一级）</span>
+      label<span class="token punctuation">:</span> <span class="token string">&quot;当前项的标签名&quot;</span><span class="token punctuation">,</span>
+      title<span class="token punctuation">:</span> <span class="token string">&quot;主题&quot;</span><span class="token punctuation">,</span>
+      properties<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// 说明当前的项是一个块</span>
         subname<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          label<span class="token punctuation">:</span> <span class="token operator">...</span>
+          <span class="token comment">// ... 项的写法</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    more2<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      title<span class="token punctuation">:</span> <span class="token operator">...</span>
+
+    aboutArray<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">&quot;...&quot;</span><span class="token punctuation">,</span>
       <span class="token comment">// array: &quot;array&quot;,  // 简写, 其余使用默认值</span>
       array<span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment">// 有此值说明是一个动态数组，可添加、删除、排序</span>
         name<span class="token punctuation">:</span> <span class="token string">&quot;array&quot;</span><span class="token punctuation">,</span>
@@ -150,7 +141,7 @@
       <span class="token punctuation">}</span>
       properties<span class="token punctuation">:</span> <span class="token punctuation">{</span>
         subname<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-          label<span class="token punctuation">:</span> <span class="token operator">...</span>
+          <span class="token comment">// ... 项的写法</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
@@ -165,6 +156,6 @@
         </a>
         →
       </span></p></div> </div> <!----></div></div>
-    <script src="/vue-easy-form-docs/dist/assets/js/app.cf7264d1.js" defer></script><script src="/vue-easy-form-docs/dist/assets/js/18.c9f3524b.js" defer></script>
+    <script src="/vue-easy-form-docs/dist/assets/js/app.c3de41c9.js" defer></script><script src="/vue-easy-form-docs/dist/assets/js/18.b8c76a95.js" defer></script>
   </body>
 </html>

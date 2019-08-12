@@ -28,7 +28,7 @@
 :::
 
 ## es写法
-es语法就一条es:为前缀的字符串，再按照一定的规则解析出来的js语句。实例见[es写法实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
+es语法: `es:`为前缀的字符串，数据源以<span v-pre>`大括号（如：{{$root}}）`</span>包括起来，再按照一定的规则解析出来的js语句。实例见[es写法实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
 ```js
 name: {
   label: "姓名",
@@ -54,10 +54,10 @@ level: {
 }
 ```
 支持es有4个数据源，这4个值共同影响整个es的解析：
-- `rootData`： 整个表单的`根值/rootData`. root在es语法中的写法是<span v-pre>`{{$root}}`</span>
+- `rootData`： 整个表单的[根值/rootData](./explain.md#根值). root在es语法中的写法是<span v-pre>`{{$root}}`</span>
 - `global`： 从表单中传入，用于外部对表单影响, 不设置则默认为`空对象`; global在es语法中的写法是<span v-pre>`{{$global}}`</span>
 - `index`：数组中孩子节点(非孙子节点))项所在的索引，其它节点(非孩子)节点此值是-1. index在es语法中的写法是<span v-pre>`{{$index}}`</span>
-- `hidden`： 用于判断某一项是否隐藏的`函数`. hidden在es语法中的写法是<span v-pre>`{{$hidden(base.target)}}`</span>; 括号中是路径
+- `hidden`： 用于判断某一项是否隐藏的`函数`. hidden在es语法中的写法是<span v-pre>`{{$hidden(base.target)}}`</span>; 括号中是路径；此函数也是表单方法[isHidden](./form.md#表单方法)
 
 [数组es写法](./array.md#数组es写法)
 

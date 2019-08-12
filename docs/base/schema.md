@@ -31,24 +31,14 @@ schema就是一个json对象
 {
   autoMatch: false, // 非必填 一二级的数据自动匹配, 只在根节点中有效
   title: '表单名称', // 非必填 标题, properties(同组)要存在
-  direction: "v", // 非必填 类型：字符串; 值：v或h 横排还是竖排
-  colon: false, // 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承
-  rowHeight: 40, // 非必填 整数（px） 每一行的高度
-  rowSpace: 20, // 非必填 整数（px）与上一次行之间的间隔
-  labelWidth: 120, // 非必填 整数（px） label的宽度
-  offsetLeft: 0,    // 非必填 每一项左边留白的空间
-  offsetRight: 0,   // 非必填 每一项右边留白的空间
-  hidden: false, // 非必填 持es语法; 是否隐藏此级，默认为显示
-  hdValue: '',  // 非必填。有hidden的地方可设置此值
   layout: '',     // 非必填。space: 是一个占位符; tabs: 下一级tabs布局, 详情见[表单开始/配置]
-  isTmp: false,   // true时表单不输出此项值
   ui: { // 非必填. 对properties界面的补充
     showBody: undefined,  // 此值有undefined, true, false
     type: undefined,      // 此值有undefined, bg, block, bg-block
     hasBorder: false,
     padding: undefined,   // 内容区的内边距
-    hidden: false, // 非必填 持es语法; 是否隐藏此级，默认为显示
 
+    // 以下的这几个值会被下一级继承（如name）
     direction: "v", // 非必填 类型：字符串; 值：v或h 横排还是竖排
     colon: false, // 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承
     rowHeight: 40, // 非必填 整数（px） 每一行的高度
@@ -58,12 +48,24 @@ schema就是一个json对象
     offsetRight: 0   // 非必填 每一项右边留白的空间
     
   },
-  properties: { // 根节点：表单字段
-    name: {
-      value: '', // 必填：数据的值
+  hidden: false, // 非必填，隐藏此项; 在根节点（最外级）中无效
+  hdValue: undefined, //  非必填，隐藏项时的值; 在根节点（最外级）中无效
+  isTmp: false, // 非必填 临时值; 在根节点（最外级）中无效
+  label: false, // 非必填 项标签名; 在根节点（最外级）中无效
+  properties: { // properties代表块，下面包含项
+    name: {     // 这就一项
+      // 在项中设置，只影响当前的项，也就是只影响name
+      direction: "v", // 非必填值：v或h 横排还是竖排；不写就继承父类
+      colon: false, // 非必填 是否有冒号，根节点默认为没有，其它的没有设置就会继承
+      rowHeight: 40, // 非必填 整数（px） 每一行的高度
+      rowSpace: 20, // 非必填 整数（px）与上一次行之间的间隔
+      labelWidth: 120, // 非必填 整数（px） label的宽度
+      offsetLeft: 0,    // 非必填 每一项左边留白的空间
+      offsetRight: 0,   // 非必填 每一项右边留白的空间
+
       hidden: false, // 非必填 支持es语法; 是否隐藏此级，默认为显示
-      hdValue: '', //  非必填 同上hdValue
-      direction: "h", // 非必填 同上，不写就继承父类
+      hdValue: undefined, //  非必填 同上hdValue
+      isTmp: false, // 非必填 临时值
       isTrim: false, // 非必填 是否去掉左右两边的空格，包括换行，默认为true
       col: 12,  // 非必填 每一个属性原则上是点一行的，一行分为24列，12就代表一半
       // label: "姓名", // 必填
@@ -94,37 +96,26 @@ schema就是一个json对象
         ref: "testRef", // 非必填 组件索引
         actions: []    // 非必填 组件事件
       },
+      value: '', // 非必填：此项的值；最好填写，用于默认值；默认为undefined
       // 字符串（如"g"可以是任意字符串），设置此值说明相邻的"同组"节点会排成一行，不换行; 
-      // 是排列component,对properties无效
       group: "g", // 非必填
       unit: "%",  // 非必填 字符串，对组件进行补充; 是对component的补充,对properties无效
       desc: "姓名必须这个样子", // 非必填 对此属性的描述
       help: "我就是要提示" //非必填
     },
 
-    // 当有layout=='space',说明这个是占位空间; 区分大小写
-    // 此值不会取出，label也不会显示（有效值只有col, hidden, group; 其余的失效）
-    // "tmptext3"为任意属性名
-    tmptext3: { 
-      layout: "space",
-      group: "g",
-      value: "102",
-      col: 12,
-      label: {
-        text: "体重体重体重体重3"
-      },
-      help: {} ; 
-    },
-    more1: {
-      title: ...
-      properties: {
+    info: { // 这也是一项；只不过这项就是一个块（下一级）
+      label: "当前项的标签名",
+      title: "主题",
+      properties: { // 说明当前的项是一个块
         subname: {
-          label: ...
+          // ... 项的写法
         }
       }
     },
-    more2: {
-      title: ...
+
+    aboutArray: {
+      title: "...",
       // array: "array",  // 简写, 其余使用默认值
       array: {  // 有此值说明是一个动态数组，可添加、删除、排序
         name: "array",
@@ -144,7 +135,7 @@ schema就是一个json对象
       }
       properties: {
         subname: {
-          label: ...
+          // ... 项的写法
         }
       }
     }

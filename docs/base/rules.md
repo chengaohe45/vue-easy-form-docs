@@ -170,3 +170,4 @@ data() {
     };
   }
 ```
+>`rules.required`和`rules.checks`是一个互补的关系，`rules.required`是检查`空值`；`rules.checks`是检查`有值`，系统的检查顺序是：先判断是否有值，有值的话再执行`rules.checks`。应用场景如：当输入一个手机号码，要么不输入，要么输入正确；若想手机号码不可为空，此需要设置rules.required为true。
