@@ -38,6 +38,7 @@ module.exports = {
             'base/form-value',
             'base/array',
             'base/com-standard',
+            'base/auto-match',
             'base/schema'
           ]
         },
