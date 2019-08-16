@@ -15,7 +15,7 @@ module.exports = {
             link: '/version/overview'
           },
           {
-            text: '1.4.0（最新）',
+            text: '1.4.*',
             link: '/version/1.4.all'
           }
         ]
