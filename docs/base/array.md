@@ -76,7 +76,9 @@ data() {
 | hasCopy | 是否有复制按钮 | boolean | -- | false | 
 | fixed | 固定数量 | number | >=0 | 0 | 前几条是固定的，不可移动，也不可删除
 | min | 最少多少条 | number | >=0 | 0 | 0 代表无限制
-| max | 最多多少条 | number | >=0 | 0 | 0 代表无限制
+| max | 最多多少条 | number | >=0 | 0 | 0 代表无限制；<br/>大于min
+| minMsg | 小于最小条数时提示 | string | -- | `长度不能小于(min)` | min>0时有效
+| maxMsg | 大于最小条数时提示 | string | -- | `长度不能大于(max)` | max>0时有效
 | hasOrder | 可排序 | boolean | -- | true | --
 | hasDelWarn | 删除提示 | boolean | -- | true | 删除时是否有提示
 | headRequired | “星号”的位置 | boolean | -- | true | 当name为`array`无效，为`array-table`有效；<br />当设置为true时，“星号”在table头部显示，而不是在内容区随组件显示；<br />注意：required的值不能受properties里面的属性影响

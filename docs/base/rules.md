@@ -4,13 +4,13 @@
 ```js
 rules: {
   required: true,   // 默认为false
-  emptyMsg: "不能为空",  // 为空的错误提示
+  emptyMsg: "不能为空",  // 为空的错误提示；默认值：不能为空
   // checks可以是以下写成的数组 如 checks: [{...}, {...}]
   checks: {    // handler函数(非箭头函数时): this指向form
     trigger: "change",  // 检查的时机，多个时可写成"input change"或["change", "input"]
     handler: function(options) {} // options => {value, pathKey, idxChain, index}
   },
-  errMsg: "格式不对" // checks后的错误信息提示
+  errMsg: "格式不对" // checks后的错误信息提示；默认值：格式不对
 }
 ```
 handler => options包含的属性：
