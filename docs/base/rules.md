@@ -87,7 +87,7 @@ data() {
           value: "",
           col: 18,
           rules: {
-            required: "es: {{$root}}.isOpen",
+            required: "es: {{$root}}.isOpen",   // es写法
             emptyMsg: "名称不能为空"
           },
           desc: "required支持es语法"
@@ -99,12 +99,14 @@ data() {
           value: 10,
           rules: {
             checks: {
-              handler: "es: {{$root.age}}>=10",
+              handler: function(data) {
+                var value = data.value;
+                return value > 10;  // 返回true表示验证通过；其它值都认为验证不通过
+              },
               trigger: "change"
             },
             errMsg: "年龄不能小于10"
-          },
-          desc: "checks.handler支持es(这里不能小于10)"
+          }
         }
       }
     };
@@ -136,7 +138,7 @@ data() {
               // options => {value, pathKey, idxChain, index}
               handler: function(options) {
                 var reg = /^1\d{10}$/;
-                return reg.test(options.value);
+                return reg.test(options.value); // 返回true表示验证通过；其它值都认为验证不通过
               },
               trigger: "change"
             },
@@ -159,7 +161,7 @@ data() {
               if (value && value.length > 10) {
                 return "广告描述字数不能多于10"; // 直接返回错误信息
               } else {
-                return true;
+                return true;    // 返回true表示验证通过；其它值都认为验证不通过
               }
             },
             errMsg: "广告描述输入有误"
