@@ -20,6 +20,7 @@ module.exports = {
           }
         ]
       },
+      { text: '捐赠', link: '/donate' },
       { text: 'GitHub', link: 'https://github.com/chengaohe45/vue-easy-form' },
       { text: 'esForm例子', link: 'https://chengaohe45.github.io/vue-easy-form-docs/demo' }
     ],

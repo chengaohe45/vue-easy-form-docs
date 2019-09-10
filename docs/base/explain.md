@@ -33,7 +33,7 @@ base.target["name"]
 ## es语法
 es语法就一条`es:`为前缀的字符串，再按照一定的规则解析出来的js语句。<br />
 如：<br /><span v-pre>`es: {{$root}}.isJson ? 'JSON格式' : 'XML格式'`</span><br />
-说明：字符串以es:开关，用表单根数据代替<span v-pre>{{$root}}</span>, 最终变为<br />
+说明：字符串以es:开头，用表单根数据代替<span v-pre>{{$root}}</span>, 最终变为<br />
 `rootData.isJson ? 'JSON格式' : 'XML格式'`<br />
 
 支持es有4个数据源，这4个值共同影响整个es的解析：

@@ -1,5 +1,8 @@
 # 版本总览
 
+# 1.4.7（2019.09.03）
+- 修复$global监听问题
+
 ## 1.4.6（2019.8.25）
 - 增加数组min、max时的错误提示（[minMsg, maxMsg](../base/array.md#配置属性)）
 - 修复component.text的函数写法
