@@ -28,7 +28,7 @@
 :::
 
 ## es写法
-es语法: `es:`为前缀的字符串，数据源以<span v-pre>`大括号（如：{{$root}}）`</span>包括起来，再按照一定的规则解析出来的js语句。实例见[es写法实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
+es语法: `es:`为前缀的字符串，[数据源](./explain.md#es语法)以大括号（如：<span v-pre>`{{$root}}`</span>）包括起来，再按照一定的规则解析出来的js语句。实例见[es写法实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
 ```js
 name: {
   label: "姓名",
