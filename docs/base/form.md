@@ -35,7 +35,7 @@
 
 | 属性名 | 说明 | 参数 | 备注
 | -- | -- | -- | -- 
-| getRef | 取元素或组件 | (name, idxChain) | 类似于ref；若项组件在表单数组中，则返回来的是一个数组[见下面详解](#getref)
+| getRef | 取元素或组件 | (name, idxChain) | 类似于ref；若项组件在表单数组中，则返回来的是一个数组[见下面详解](#getref)；<br />`注意：`隐藏的项是不会取出的
 | checkAll | 检查表单是否有错 | 空 | true/false
 | submit | 触发submit事件 | 空 | --
 | isHidden | 判断某项是否隐藏 | ([pathKey](./explain.md#项组件路径)) | --
@@ -54,5 +54,7 @@
 参数：
 - `name` 必填；在[项组件](./component.html)中设置的ref名称
 - `idxChain` 选填；项组件所在的[索引链](./explain.md#索引链)，用于`数组`; 具体作用是当取出是数组的时候，可以用idxChain指出来出是哪一个
-
+::: warning
+注意：隐藏的项（也就是属性hidden为true, 包括自身或父类隐藏）是不会取出来
+:::
 [项组件actions的具体写法](./component.html#组件事件)
