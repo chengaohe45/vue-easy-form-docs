@@ -117,14 +117,14 @@ data() {
 | rules | 规则设置 [写法](./rules.md) | object | -- | -- |
 | format | 数值转换 [写法](./format.md) | array/object | -- | -- | 组件内有效
 | component | 配置组件 [写法](./component.md) | string/object | -- | 全局 |
-| group | 项与项进行分组 | string | -- | -- | 设置为分组，是`相邻`的
+| group | 项与项进行分组 | string | -- | -- | 设置为分组，是`相邻`的；<br/>只对`component`有效，对`properties`是无效的
 | unit | 对项进行补充 | string | -- | -- | 如：px；支持es或组件化<br/>支持[es写法](./com-standard.md#es写法)、[函数写法](./com-standard.md#函数写法)
 | desc | 对项进行描述 | string | -- | 全局 | 支持[es写法](./com-standard.md#es写法)、[函数写法](./com-standard.md#函数写法)
 | help | 对项设置帮助 [写法](./help.md) | string/object | -- | -- | 支持[es写法](./com-standard.md#es写法)、[函数写法](./com-standard.md#函数写法)
 | array | properties或组件是数组，[写法](./array.md) | string/object | -- | -- | 
 | isTmp | 临时值 | boolean | -- | false | 表单不输出此项值,但可作为表单内部使用
 | layout | 布局 | object/string | "space" "tabs" or Object | false | `区分大小写`<br />`space`: 是一个占位符<br />`tabs`:下一级为tabs布局[写法](#layout属性)
-
+| `properties` | 下一级 | object | -- | -- | 下一级，重复上面的配置
 [schema的具体写法](./schema.md)
 
 ### ui属性

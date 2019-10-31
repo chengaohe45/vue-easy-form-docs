@@ -98,7 +98,7 @@ schema就是一个json对象
       },
       value: '', // 非必填：此项的值；最好填写，用于默认值；默认为undefined
       // 字符串（如"g"可以是任意字符串），设置此值说明相邻的"同组"节点会排成一行，不换行; 
-      group: "g", // 非必填
+      group: "g", // 非必填; 在component项有效，在properties块中是无效的
       unit: "%",  // 非必填 字符串，对组件进行补充; 是对component的补充,对properties无效
       desc: "姓名必须这个样子", // 非必填 对此属性的描述
       help: "我就是要提示" //非必填
@@ -107,6 +107,7 @@ schema就是一个json对象
     info: { // 这也是一项；只不过这项就是一个块（下一级）
       label: "当前项的标签名",
       title: "主题",
+      //group: "分组在这里是无效的：因为是在块里面（properties），块不做分组",
       properties: { // 说明当前的项是一个块
         subname: {
           // ... 项的写法
