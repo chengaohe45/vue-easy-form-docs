@@ -15,6 +15,10 @@ module.exports = {
             link: '/version/overview'
           },
           {
+            text: '1.5.*',
+            link: '/version/1.5.all'
+          },
+          {
             text: '1.4.*',
             link: '/version/1.4.all'
           }
