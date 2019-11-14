@@ -1,20 +1,32 @@
 # 安装/全局配置
 
-## 安装
+## npm安装
 ```js
+// 安装
 npm install --save vue-easy-form
-```
 
-## 引入
-
-```js
+// 引用
 import esForm from "vue-easy-form";
 ```
 
-## 注册
-语法：Vue.use(esForm, extendRule, options);
+## cdn安装
+可以通过[unpkg.com/vue-easy-form](https://unpkg.com/browse/vue-easy-form/) 获取到最新版本的资源，在页面上引入`js`文件即可
+```html
+<!-- 引入组件库: 这个会自动获取最新版本 -->
+<script src="https://unpkg.com/vue-easy-form/dist/es-form.umd.min.js"></script>
+<!-- 
+或: 带某个版本号
+<script src="https://unpkg.com/vue-easy-form@1.5.1/dist/es-form.umd.min.js"></script> 
+-->
 
-如：
+// 引用
+var esForm = window["esForm"];
+```
+
+## 注册
+注册的作用主要是：声明一个全局的`es-form`组件和表单框的基本配置。<br/>
+`语法`：Vue.use(esForm, options); 
+
 ```js
 Vue.use(esForm);
 或
@@ -35,8 +47,8 @@ Vue.use(esForm,
 ```
 参数(get)：
 
-- esForm: 必填 所引入的esForm组件
-- options：非必填 全局设置
+- esForm: 必填，所引入的esForm组件
+- options：非必填，全局设置
 
 ## 全局设置
 
