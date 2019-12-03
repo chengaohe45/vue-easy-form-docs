@@ -22,7 +22,7 @@
   text: "文本描述"    // 有些组件不支持这个；就是default-slot；支持es/函数写法
 }
 ```
-::: warning
+::: warning 注意
 `没有this指针` 当props里的的属性（如：disabled）写成一个函数时，this并不指向表单的。
 为什么? 因为当执行这些函数时，表单内的组件正处于未构造或正在重复构造，不建议调用表单内的函数(如：form.getValue等)；这个与验证rules.checks、数组array.insertValue、项组件component.actions里面的函数不同，后者们的this是指向表单的
 :::

@@ -61,8 +61,7 @@ data() {
   }
 ```
 
-::: warning
-`注意：` 
+::: warning 注意
 - autoMatch设置只能在根节点中设置，其它块是无效的；
 - 自动匹配只影响一级和二级的表单值输出，对根值rootData没有影响；
 - 因为输出表单值时，二级要提升为一级，为了保持key的唯一性，编写schema时，一级和二级的所有的key（如：pageName、font、background、fontSize、backgroundImage）不能相同。

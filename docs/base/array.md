@@ -145,7 +145,7 @@ data() {
   }
 ```
 >在es写法中，`[i]`是一个固定的写法，它代表当前的行，运行时会用[索引链(idxChain)](./explain.md#索引链)进行代替. <br/>若孩(孙)子节点也为数组，也是用`[i]`, <br/>如：<span v-pre>`es: !{{$root.courses[i].students[i].name}}`</span>
-::: warning
+::: warning 注意
 `[i]`必须写在大括号内
 :::
 

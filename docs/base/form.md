@@ -54,7 +54,7 @@
 参数：
 - `name` 必填；在[项组件](./component.html)中设置的ref名称
 - `idxChain` 选填；项组件所在的[索引链](./explain.md#索引链)，用于`数组`; 具体作用是当取出是数组的时候，可以用idxChain指出来出是哪一个
-::: warning
+::: warning 注意
 注意：隐藏的项（也就是属性hidden为true, 包括自身或父类隐藏）是不会取出来
 :::
 [项组件actions的具体写法](./component.html#组件事件)

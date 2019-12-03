@@ -38,23 +38,24 @@ module.exports = {
             'base/install',
             'base/settings',
             'base/explain',
+            'base/com-format',
             'base/console',
             'base/form',
             'base/form-value',
             'base/array',
             'base/com-standard',
             'base/auto-match',
-            'base/schema'
+            'base/schema',
+            'base/rules'
           ]
         },
         {
           title: '可组件化属性详解',
           collapsable: false,
           children: [
-            'base/label',
             'base/component',
+            'base/label',
             'base/title',
-            'base/rules',
             'base/help',
             'base/unit',
             'base/desc'
