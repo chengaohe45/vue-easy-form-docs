@@ -91,11 +91,14 @@ data() {
 | rules | 数组验证 | boolean/object | trigger只有:<br> input<br>change | -- | 跟[项组件验证写法](./rules.html)一样
 | value | 数组的默认值 | array | -- | -- | --
 
-### insertValue
-当insertValue为函数时，insertValue(options)的`this`指向`表单`，返回值（不为undefined, undefined说明取各自的默认值）即为插入的值；参数options为一个对象，包含的信息为：
-- `oldValues`： 插入前，当前数组的值
-- `position`： 插入的位置，从0开始计算
-- `type`： "copy" or "add"
+## 数组默认插入值
+字段：array.insertValue
+1. 类型为`函数`时：即可动态根据实际情况修改输出默认值。insertValue(options)的`this`指向`表单`；当函数的返回值不为`undefined`时，即为插入的值，若为`undefined`，则说明取各自的默认值（如：copy时则取copy的那一行的值）<br/>
+  `参数options`：为一个对象，包含的信息如下：
+    - `oldValues`： 插入前，当前数组的值
+    - `position`： 插入的位置，从0开始计算
+    - `type`： "copy" or "add"
+2. 类型为`其它的值`时：即插入固定值
 
 ## 数组事件
 
@@ -144,7 +147,7 @@ data() {
     };
   }
 ```
->在es写法中，`[i]`是一个固定的写法，它代表当前的行，运行时会用[索引链(idxChain)](./explain.md#索引链)进行代替. <br/>若孩(孙)子节点也为数组，也是用`[i]`, <br/>如：<span v-pre>`es: !{{$root.courses[i].students[i].name}}`</span>
+> 在`数组es写法`中，`[i]`是一个固定的写法，它代表当前的行，运行时会用[索引链(idxChain)](./explain.md#索引链)进行代替. <br/>若孩(孙)子节点也为数组，也是用`[i]`, <br/>如：<span v-pre>`es: !{{$root.courses[i].students[i].name}}`</span>
 ::: warning 注意
 `[i]`必须写在大括号内
 :::

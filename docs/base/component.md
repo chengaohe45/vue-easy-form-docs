@@ -1,5 +1,10 @@
 # 项组件/component
 
+## 实例
+```html
+<es-form ref="form" :schema="formSchema" v-model="formValue"></es-form>
+```
+
 ## 简写
 
 component字段
@@ -8,10 +13,9 @@ component字段
 data() {
     return {
       formValue: {
-        // name: "默认小花"
       },
       formSchema: {
-        name: {
+        advName: {
           label: "广告名称",
           component: "el-input",
           value: "首页位置"
@@ -29,10 +33,9 @@ component字段
 data() {
     return {
       formValue: {
-        // name: "默认小花"
       },
       formSchema: {
-        name: {
+        advName: {
           label: "广告名称",
           component: {
             name: "el-input",
@@ -43,9 +46,10 @@ data() {
             // align: "left",      // left, center, right
             // ref: "testRef",   // 索引值，可以通过 form.getRef('testRef')取出
             // flex: "full",      // 这个一般用于分组
-            // actions: []         // 见下面
+            // actions: [],       // 见下面
+            // value: "首页位置"   // 组件的默认值
           },
-          value: "首页位置"
+          value: "首页位置"   // 组件的默认值也可写在这里，优先级高于component.value
         }
       },
     };
@@ -55,6 +59,10 @@ data() {
 - `''`： 默认为没有设置，component的长度根据自身情况自动取值
 - `full`： 项中有多少点多少。此值一般用于component
 - `self`： label的文本占多宽就多宽。此值一般用于label
+
+### value值
+- 通常在编写项（如：advName）时，component直接写成组件名，所以value写在外面（跟component同级）也是可以的
+- 写在外面的value只有在`项组件`中有效，且优先级高于component.value
 
 ## 组件事件
 

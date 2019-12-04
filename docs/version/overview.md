@@ -1,5 +1,11 @@
 # 版本总览
 
+# 1.5.3（2019.12.04）
+- [支持VUE组件的属性是函数类型](../base/com-format.md#当props里面的某属性是的类型是函数怎么办？)
+- label、desc、help、unit、title支持style、class并且支持[动态解析](../base/com-standard.md)
+- 优化[项组件](../base/component.md)：支持component对象里配置value
+- 功能优化：对接原生表单组件
+
 # 1.5.2（2019.11.29）
 - 功能优化：对接原生表单组件
 - 支持指令

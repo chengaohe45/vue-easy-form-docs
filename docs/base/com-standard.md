@@ -1,32 +1,5 @@
-# 组件化/es/函数写法
-
-## 组件化标准写法
-组件化是指某个属性根据实际要求，按一定的格式引入Vue组件；目前支持组件化的属性有：项标签label、描述desc、帮助help、单元unit、标题title、项组件component，当然，这些属性都有自己其它的写法，具体的写法见各属性详解。<br/>
-`引入一个组件(从一个Object开始)`：
-```js
-属性名: {     // 表单配置属性名如：label, help
-  name: "el-input",  // 这个是不支持es/函数写法，也就是一经固定，不支持改变
-  style: {  // 一个对象；这个是不支持es/函数写法
-    color: "#000"
-  },
-  class: "box1 box2", // 类，多个以空格隔开；这个是不支持es/函数写法
-  // Vue组件需要的属性；props的key支持es/函数写法(注意：是props的key,不是props的key的key)
-  props: {
-    type: "textarea",   // 值固定写法
-    placeholder: "es: {{$root}}.isOpen ? '提示1' : '提示2'", // 支持es写法, 具体见下面
-    // options => {global, rootData, idxChain, index, pathKey, $hidden}
-    disabled: function(options) {  // 支持函数写法, options所携带的信息具体见下面
-      return options.rootData.isOpen;
-    }
-  },
-  text: "文本描述"    // 有些组件不支持这个；就是default-slot；支持es/函数写法
-}
-```
-::: warning 注意
-`没有this指针` 当props里的的属性（如：disabled）写成一个函数时，this并不指向表单的。
-为什么? 因为当执行这些函数时，表单内的组件正处于未构造或正在重复构造，不建议调用表单内的函数(如：form.getValue等)；这个与验证rules.checks、数组array.insertValue、项组件component.actions里面的函数不同，后者们的this是指向表单的
-:::
-
+# es/函数写法
+`es/函数写法`也就是平常所说的`动态解析`。它是监听各类`数据源`的变化，解析出对应的属性值。
 ## es写法
 es语法: `es:`为前缀的字符串，[数据源](./explain.md#es语法)以大括号（如：<span v-pre>`{{$root}}`</span>）包括起来，再按照一定的规则解析出来的js语句。实例见[es写法实例](https://chengaohe45.github.io/vue-easy-form-docs/demo/#/es-function)
 ```js
@@ -53,7 +26,7 @@ level: {
   value: ""
 }
 ```
-支持es有4个数据源，这4个值共同影响整个es的解析：
+支持es有4个`数据源`，这4个值共同影响整个es的解析：
 - `rootData`： 整个表单的[根值/rootData](./explain.md#根值). root在es语法中的写法是<span v-pre>`{{$root}}`</span>
 - `global`： 从表单中传入，用于外部对表单影响, 不设置则默认为`空对象`; global在es语法中的写法是<span v-pre>`{{$global}}`</span>
 - `index`：数组中孩子节点(非孙子节点))项所在的索引，其它节点(非孩子)节点此值是-1. index在es语法中的写法是<span v-pre>`{{$index}}`</span>

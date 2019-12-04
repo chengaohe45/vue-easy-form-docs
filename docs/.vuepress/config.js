@@ -39,11 +39,11 @@ module.exports = {
             'base/settings',
             'base/explain',
             'base/com-format',
+            'base/com-standard',
             'base/console',
             'base/form',
             'base/form-value',
             'base/array',
-            'base/com-standard',
             'base/auto-match',
             'base/schema',
             'base/rules'
