@@ -18,17 +18,27 @@
   actions: {    // 组件的行为，多个时可写数组
     trigger: "click",
     handler: function() {}
+  },
+  directives: {   // 指令，多个时可写数组；也可直接写上指令名
+    name: "loading",  // 指令名
+    value: 2,       // 指令的绑定值；支持动态解析；注：只有指令绑定值value支持动态解析
+    expression: "1 + 1",  // 指令表达式
+    arg: "foo",       // 传给指令的参数
+    modifiers: {      // 一个包含修饰符的对象
+      bar: true
+    }
   }
 }
 ```
 
-- `name`: 组件名；类型：字符串或一个组件对象
-- `style`: 内联样式；类型：对象
-- `class`: 样式类；类型：字符串、对象、数组；要符合[Vue Class](https://cn.vuejs.org/v2/guide/class-and-style.html)写法
-- `props`: 组件属性；类型：对象
-- `text`: 组件文本；类型：字符串
-- `value`: 组件的值（与v-model实行双向绑定）；类型：任何
-- `actions`: [组件事件](component.md#组件事件)；类型：对象或数组
+- `name`: 组件名；`类型`：字符串或一个组件对象
+- `style`: 内联样式；`类型`：对象
+- `class`: 样式类；`类型`：字符串/对象/数组；要符合[Vue Class](https://cn.vuejs.org/v2/guide/class-and-style.html)写法
+- `props`: 组件属性；`类型`：对象
+- `text`: 组件文本；`类型`：字符串
+- `value`: 组件的值（与v-model实行双向绑定）；`类型`：任何
+- `actions`: [组件事件](component.md#组件事件)；`类型`：对象/数组
+- `directives`: 指令；`类型`：字符串/对象/数组；索引`directives`可简写为`v`
 
 <!-- ::: warning 注意1
 - 这个是通用配置，是否必填要看各个`可组件化属性`的需要；
