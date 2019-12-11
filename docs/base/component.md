@@ -64,27 +64,8 @@ data() {
 - 通常在编写项（如：advName）时，component直接写成组件名，所以value写在外面（跟component同级）也是可以的
 - 写在外面的value只有在`项组件`中有效，且优先级高于component.value
 
-## 组件事件
-
-component.actions字段描述
-```js
-标准写法
-actions: {
-  // 默认为click, 多个事件写法: ["change", "input"]或"change input"
-  trigger: "change",
-  // options => {value, event, pathKey, index, idxChain,target}
-  handler: function(options){...}
-}
-
-简写 （直接写成一个函数），trigger默认为click
-actions: function(options){...}
-
-多个事件
-actions: [标准写法或简写组成的数组]
-```
-
-- `this`： handler函数的this指针指向表单，这样可以方便取出其它组件(如`this.getRef("xxxx")`)，从而做联动等功能
-
+## 项组件事件
+字段：component.actions；配置格式见[组件写法->组件事件](./com-format.md#组件事件)
 
 ### 事件示例
 ```js
@@ -126,8 +107,7 @@ data() {
     };
   }
 ```
-
-handler => options包含的属性：
+函数handler返回的参数options包含的信息有：
 - `value`： 当前项组件的值，表单的值可以通过this取出
 - `event`： 事件本身所携带的信息, 如keyup.native,可以从这里提取键值；若是$emit事件，则value等于event
 - `target`： 当前项组件(若是`数组事件`，这个为`null`)
