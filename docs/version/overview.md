@@ -1,5 +1,8 @@
 # 版本总览
 
+# 1.5.3（2019.12.12）
+- label、desc、help、unit、title支持[组件事件](../base/com-format.md#组件事件)
+
 # 1.5.3（2019.12.04）
 - [支持VUE组件的属性是函数类型](../base/com-format.md#当props里面的某属性是的类型是函数怎么办？)
 - label、desc、help、unit、title支持style、class并且支持[动态解析](../base/com-standard.md)
