@@ -1,16 +1,18 @@
 # 项标签/label
 
-值：
+字段：`label`<br/>
+值类型有：
 - `false`： 默认值，label隐藏，空间不存在的
 - `''`： 空值 但label空间是存在的
-- `文字`： 有值
+- `string`： 项label文字；支持[动态解析](./com-standard.md)
+- `object`： 一个对象，见[组件写法](./com-format.md)
 
 ## 实例
 ```html
 <es-form ref="form" :schema="formSchema" v-model="formValue"></es-form>
 ```
 
-## 简写1
+## 写法
 
 ```js
 data() {
@@ -19,87 +21,46 @@ data() {
         // name: "默认小花"
       },
       formSchema: {
-        name: {
-          label: "广告名称"  // 直接写label, component将会取系统默认的
-        }
-      },
-    };
-  },
-```
 
-## 简写2
+        // 写法一
+        name: "广告名称", // 直接写在属性上，component将会取系统默认的
 
-```js
-data() {
-  return {
-    formValue: {
-      // name: "默认小花"
-    },
-    formSchema: {
-      name: "广告名称"   // 直接写在属性上，判断若是字符串，则是label的值
-    },
-  };
-}
-```
-
-## es写法
-
-```js
-data() {
-  return {
-    formValue: {
-      // name: "默认小花"
-    },
-    formSchema: {
-      isOpen: {
-        label: "开关",
-        component: "el-switch",
-        value: true
-      },
-
-      esLabel: {
-        label: "es: '广告标签' + ({{$root}}.isOpen ? '(开)' : '(关)')",
-        component: {
-          name: "el-input",
-          props: {
-            placeholder: "切换开关试试"
-          }
+        // 写法二
+        status: {
+          label: "状态", // 直接写label
+          component: "el-switch",
+          value: true
         },
-        rules: true,
-        value: ""
-      }
-    },
-  };
-}
-```
 
-
-## 标准(组件化)写法
-
-
-```js
-data() {
-    return {
-      formValue: {
-        // name: "默认小花"
-      },
-      formSchema: {
-        name: {
+        // 写法三
+        tags: {
           label: {
-            text: "广告名称",
-            // flex: "self",       // self or full; 默认为没有设置，则会是labelWidth
-            // align: "left",      // left, center, right
-            // name: "span",       // 引入自定义组件
-            // props: {
-            //   // name的属性
-            // }
+            hidden: "es: !{{$root}}.status", // 控制title是否隐藏
+            text: "es: '标签' + ({{$root}}.status ? '1' : '2')",
+            help: "我在label里"
           },
           component: "el-input",
-          value: "首页位置"
+          value: ""
+        },
+
+        // 写法四：组件写法
+        target: {
+          label: {
+            hidden: "es: !{{$root}}.status", // 控制title是否隐藏
+            name: "span",   // 也可以是其它自定义的组件
+            props: {},
+            text: "投放目标",
+            flex: "self", // self or full; 默认为没有设置，则会是labelWidth
+            align: "left", // left, center, right
+            help: "我在label里" // 帮助提示
+          },
+          component: "el-input",
+          value: "中年人"
         }
-      },
+
+      }
     };
-  },
+  }
 ```
 
 ### flex值

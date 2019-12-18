@@ -1,11 +1,11 @@
 # 标题/title
 
-title就是块(properties)的标题, 它在properties(同级)才有效
+字段：`title`，就是块(properties)的标题, 它在properties(同级)才有效
 
-值：
+值类型有：
 - `false`： 默认值，没有标题
-- `string`： 一个字符串，代表直接写标题
-- `object`： 一个对象，见组件化写法
+- `string`： 标题；支持[动态解析](./com-standard.md)
+- `object`： 一个对象，见[组件写法](./com-format.md)
 
 ## 实例
 ```html
@@ -26,8 +26,14 @@ data() {
           component: "el-input",
           value: "首页位置"
         },
+
+        // 写法一
         base: {
-          title: "背景信息",  // 直接文字
+          // title: "背景信息", // 也可以直接写动态解析，如es语句；这句等价于下面
+          title: {
+            // hidden: false, // 控制title文本是否隐藏，支持动态解析
+            text: "背景信息"
+          },
           label: false,
           properties: {
             image: {
@@ -42,38 +48,22 @@ data() {
             }
           }
         },
-      },
-    };
-  }
-```
 
-## 组件化写法
-
-```js
-data() {
-    return {
-      formValue: {
-        // name: "默认小花"
-      },
-      formSchema: {
-        name: {
-          label: "页面名称",
-          component: "el-input",
-          value: "首页位置"
-        },
+        // 写法二：组件写法
         more: {
           ui: {
             showBody: true,
             hasBorder: true,
             padding: 20,
-            rowSpace: 10
+            rowSpace: 10,
+            type: "bg-block"
           },
           title: {
-            name: title,  // title为自定义的组件
-            props: {
-              text: "自定义-组件化写法",
-              color: "#000"
-            }
+            // hidden: false, // 控制title是否隐藏，支持动态解析
+            name: "span", // 可以为自定义的组件
+            props: {},
+            text: "自定义-组件化写法",
+            help: "我在title里面"
           },
           label: false,
           properties: {
@@ -93,8 +83,10 @@ data() {
             }
           }
         }
-      },
+
+      }
     };
   }
 ```
+title和[ui属性](./settings.md#ui属性)都只有在properties中有效
 

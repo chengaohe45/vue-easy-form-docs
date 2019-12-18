@@ -1,16 +1,16 @@
 # 单位/unit
 
-字段unit. 写法：
-- `字符串`
-- `es语法`
-- `自定义组件`
+字段：`unit`<br/>
+值类型有：
+- `string`： 补充的内容；支持[动态解析](./com-standard.md)
+- `object`： 一个对象，见[组件写法](./com-format.md)
 
 ## 实例
 ```html
 <es-form ref="form" :schema="formSchema" v-model="formValue"></es-form>
 ```
 
-## 简写(字符串)
+## 写法
 
 ```js
 data() {
@@ -19,27 +19,21 @@ data() {
         // name: "默认小花"
       },
       formSchema: {
+        // 写法一
         age: {
-          label: "年龄", // 直接写label, component将会取系统默认的
-          unit: "岁"
-        }
-      },
-    };
-  },
-```
+          label: "年龄",
+          col: 12,
+          component: {
+            name: "el-input-number",
+            flex: "full"
+          },
+          value: 15,
+          unit: "岁"    // 也可以直接写动态解析，如es语句
+        },
 
-## es写法
-
-
-```js
-data() {
-    return {
-      formValue: {
-        // name: "默认小花"
-      },
-      formSchema: {
-         esType: {
-          label: "es方法",
+        // 写法二
+        esUnit: {
+          label: "切换单位",
           component: {
             name: "el-slider",
             props: {
@@ -48,49 +42,32 @@ data() {
             }
           },
           value: 50,
-          // col: 12,
-          unit: "es: '单位' + {{$root.esType}}"
-        }
-      },
-    };
-  },
-```
+          unit: {
+            // hidden: false,   // 控制unit是否隐藏，支持动态解析
+            text: "es: '单位' + {{$root.esUnit}}"
+          }
+        },
 
-
-## 标准(组件化)写法
-
-
-```js
-data() {
-    return {
-      formValue: {
-        // name: "默认小花"
-      },
-      formSchema: {
-        name: {
-          comType: {
-            label: "组件方法",
-            component: {
-              name: "el-slider",
-              props: {
-                min: 10,
-                max: 99
-              }
-            },
-            value: 80,
-            // col: 12,
-            unit: {
-              name: unit,   // unit就是自己定义的vue组件
-              props: {
-                num: "es: {{$root.comType}}"
-              }
+        // 写法三：组件写法
+        comUnit: {
+          label: "组件方法",
+          component: {
+            name: "el-slider",
+            props: {
+              min: 10,
+              max: 99
+            }
+          },
+          value: 80,
+          unit: {
+            // hidden: false, // 控制unit是否隐藏，支持动态解析
+            name: unit,
+            props: {
+              num: "es: {{$root.comUnit}}"
             }
           }
         }
-      },
+      }
     };
-  },
+  }
 ```
-
-
-
