@@ -1,5 +1,9 @@
 # 版本总览
 
+# 1.5.6（2019.12.19）
+- label、desc、help、unit、title支持隐藏控制（hidden属性）
+- label、title支持help配置
+
 # 1.5.4（2019.12.12）
 - label、desc、help、unit、title支持[组件事件](../base/com-format.md#组件事件)
 
