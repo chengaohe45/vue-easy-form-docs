@@ -12,81 +12,90 @@
 <es-form ref="form" :schema="formSchema" v-model="formValue"></es-form>
 ```
 
-## 简写写法
+## 写法
+<ClientOnly>
+  <demo-block>
 
-```js
-data() {
-    return {
-      formValue: {
-        // name: "默认小花"
-      },
-      formSchema: {
-        name: {
-          label: "页面名称",
-          component: "el-input",
-          value: "首页位置"
-        },
+  ```html
+  <script>
+    export default {
+      data() {
+        return {
 
-        // 写法一
-        base: {
-          // title: "背景信息", // 也可以直接写动态解析，如es语句；这句等价于下面
-          title: {
-            // hidden: false, // 控制title文本是否隐藏，支持动态解析
-            text: "背景信息"
-          },
-          label: false,
-          properties: {
-            image: {
-              label: "背景图片",
+          formValue: {},
+
+          formSchema: {
+            name: {
+              label: "页面名称",
               component: "el-input",
-              value: ""
+              value: "首页位置"
             },
-            color: {
-              label: "背景颜色",
-              component: "el-color-picker",
-              value: null
-            }
-          }
-        },
 
-        // 写法二：组件写法
-        more: {
-          ui: {
-            showBody: true,
-            hasBorder: true,
-            padding: 20,
-            rowSpace: 10,
-            type: "bg-block"
-          },
-          title: {
-            // hidden: false, // 控制title是否隐藏，支持动态解析
-            name: "span", // 可以为自定义的组件
-            props: {},
-            text: "自定义-组件化写法",
-            help: "我在title里面"
-          },
-          label: false,
-          properties: {
-            whitelist: {
-              label: "白名单",
-              component: {
-                name: "el-input"
+            // 写法一
+            base: {
+              // title: "背景信息", // 也可以直接写动态解析，如es语句；这句等价于下面
+              title: {
+                // hidden: false, // 控制title文本是否隐藏，支持动态解析
+                text: "背景信息"
               },
-              value: "xiaoming.lo"
+              label: false,
+              properties: {
+                image: {
+                  label: "背景图片",
+                  component: "el-input",
+                  value: ""
+                },
+                color: {
+                  label: "背景颜色",
+                  component: "el-color-picker",
+                  value: "#269520"
+                }
+              }
             },
-            note: {
-              label: "备注",
-              component: {
-                name: "el-input"
-              },
-              value: "备注就是这么简单"
-            }
-          }
-        }
 
+            // 写法二：组件写法
+            more: {
+              ui: {
+                showBody: true,
+                hasBorder: true,
+                padding: 20,
+                rowSpace: 10,
+                type: "bg-block"
+              },
+              title: {
+                // hidden: false, // 控制title是否隐藏，支持动态解析
+                name: "span", // 可以为自定义的组件
+                props: {},
+                text: "自定义-组件化写法",
+                help: "我在title里面"
+              },
+              label: false,
+              properties: {
+                whitelist: {
+                  label: "白名单",
+                  component: {
+                    name: "el-input"
+                  },
+                  value: "xiaoming.lo"
+                },
+                note: {
+                  label: "备注",
+                  component: {
+                    name: "el-input"
+                  },
+                  value: "备注就是这么简单"
+                }
+              }
+            }
+
+          }
+        };
       }
     };
-  }
-```
+  </script>
+  ```
+  </demo-block>
+</ClientOnly>
+
 title和[ui属性](./settings.md#ui属性)都只有在properties中有效
 

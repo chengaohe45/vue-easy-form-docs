@@ -28,10 +28,15 @@
     "README.md"
   ],
   "dependencies": {
-    "vue": "^2.6.10",
+    "element-ui": "^2.13.0",
+    "highlight.js": "^9.17.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.11",
+    "vue-easy-form": "^1.5.6",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "vuepress": "^0.14.11"
+    "vuepress": "^1.2.0"
   }
 }
